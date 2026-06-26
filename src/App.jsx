@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, MessageCircle, Menu, X, ArrowUp } from 'lucide-react';
 import './index.css';
@@ -19,15 +19,27 @@ import Footer from './components/Footer';
 // ... (Skipping full replacement of the unchanged top components, I will use targeted edits instead)
 
 const HeroSection = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Attempt to force play the video on mobile devices which might block the autoPlay attribute
+    if (videoRef.current) {
+      videoRef.current.play().catch(err => console.log("Video autoplay blocked:", err));
+    }
+  }, []);
+
   return (
     <div className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full bg-black">
         <video 
+          ref={videoRef}
           autoPlay 
           loop 
-          muted 
-          playsInline
+          muted={true}
+          playsInline={true}
+          preload="auto"
+          poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         >
           <source src="/14713469_3840_2160_25fps.mp4" type="video/mp4" />

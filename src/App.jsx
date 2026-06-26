@@ -38,8 +38,6 @@ const HeroSection = () => {
           loop 
           muted={true}
           playsInline={true}
-          preload="auto"
-          poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         >
           <source src="/14713469_3840_2160_25fps.mp4" type="video/mp4" />

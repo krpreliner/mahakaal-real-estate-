@@ -40,7 +40,7 @@ const HeroSection = () => {
           playsInline={true}
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         >
-          <source src="/14713469_3840_2160_25fps.mp4" type="video/mp4" />
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-apartment-with-a-view-of-the-city-40019-large.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#0a0a0a]" />
       </div>

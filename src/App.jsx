@@ -31,17 +31,13 @@ const HeroSection = () => {
   return (
     <div className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full bg-black">
-        <video 
-          ref={videoRef}
-          autoPlay 
-          loop 
-          muted={true}
-          playsInline={true}
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-apartment-with-a-view-of-the-city-40019-large.mp4" type="video/mp4" />
-        </video>
+      <div className="absolute inset-0 w-full h-full bg-black overflow-hidden pointer-events-none">
+        <iframe
+          src="https://www.youtube.com/embed/y9j-BL5ocW8?autoplay=1&mute=1&loop=1&playlist=y9j-BL5ocW8&controls=0&showinfo=0&modestbranding=1&disablekb=1"
+          className="absolute top-1/2 left-1/2 w-[150vw] h-[150vh] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-60"
+          frameBorder="0"
+          allow="autoplay; fullscreen"
+        ></iframe>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#0a0a0a]" />
       </div>
 
